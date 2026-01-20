@@ -24,9 +24,12 @@ export function CoursesModal({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
     }
+
+    // Cleanup function pour restaurer l'overflow quand la modal se ferme
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [isOpen]);
 
   if (!isOpen) return null;
