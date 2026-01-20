@@ -29,13 +29,23 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           <span className="text-sm opacity-60">{article.date}</span>
         </div>
 
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold mb-4 text-teal">
           {article.title}
         </h1>
 
         <p className="text-xl opacity-80 mb-8">
           {article.description}
         </p>
+
+        {article.image && (
+          <div className="mb-8 rounded-xl overflow-hidden">
+            <img
+              src={article.image}
+              alt={article.title}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        )}
 
         <div
           className="prose prose-lg max-w-none

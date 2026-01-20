@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { notFound } from "next/navigation";
 import { gsap } from "gsap";
 import { ResourceLink } from "@/components/features/ResourceLink";
+import { CoursesModal } from "@/components/features/CoursesModal";
 import { yearsData } from "@/lib/data/years-content";
 
 interface YearPageProps {
@@ -21,31 +22,40 @@ const yearTitles: Record<string, string> = {
   internat: "Internat",
 };
 
+interface ModuleData {
+  id: string;
+  name: string;
+  description?: string;
+  driveUrl?: string;
+  courses?: Array<{ title: string; url: string; year?: string }>;
+  exams?: Array<{ year: string; title: string; url: string }>;
+  corrections?: Array<{ year: string; title: string; url: string }>;
+}
+
 // ModuleAccordion Component for mobile
 function ModuleAccordion({
   module,
+  onCoursesClick,
 }: {
-  module: {
-    id: string;
-    name: string;
-    description?: string;
-    driveUrl?: string;
-    courses?: Array<{ title: string; url: string; year?: string }>;
-    exams?: Array<{ year: string; title: string; url: string }>;
-    corrections?: Array<{ year: string; title: string; url: string }>;
-  };
+  module: ModuleData;
+  onCoursesClick: (module: ModuleData) => void;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
+  const handleCoursesClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onCoursesClick(module);
+  };
+
   return (
     <div className="glass rounded-lg overflow-hidden">
       {/* Header - Always visible */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-4 flex items-center justify-between text-left hover:bg-teal-500/10 transition-colors"
-      >
-        <div className="flex-1">
+      <div className="w-full p-4 flex items-center justify-between text-left">
+        <div
+          className="flex-1 cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <h3 className="font-semibold text-lg">{module.name}</h3>
           {module.description && (
             <p className="text-xs opacity-70 mt-1 line-clamp-1">
@@ -54,13 +64,10 @@ function ModuleAccordion({
           )}
         </div>
         <div className="flex items-center space-x-2 ml-4">
-          {/* Afficher le bouton Cours SEULEMENT s'il n'y a pas de cours multiples */}
-          {module.driveUrl && !module.courses && (
-            <a
-              href={module.driveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
+          {/* Bouton Cours - toujours visible */}
+          {(module.driveUrl || module.courses) && (
+            <button
+              onClick={handleCoursesClick}
               className="hidden sm:inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-teal-500 to-coral-500 text-white rounded-lg hover:opacity-90 transition-opacity text-xs font-semibold"
             >
               <svg
@@ -77,31 +84,30 @@ function ModuleAccordion({
                 />
               </svg>
               Cours
-            </a>
+            </button>
           )}
-          {/* Indicateur du nombre de cours si présents */}
-          {module.courses && module.courses.length > 0 && (
-            <span className="hidden sm:inline-flex items-center px-2 py-1 bg-teal-500/20 text-teal rounded-lg text-xs font-semibold">
-              📚 {module.courses.length}
-            </span>
-          )}
-          <svg
-            className={`w-5 h-5 transition-transform duration-300 text-teal ${
-              isOpen ? "rotate-180" : ""
-            }`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-1 hover:bg-teal-500/10 rounded-lg transition-colors"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
+            <svg
+              className={`w-5 h-5 transition-transform duration-300 text-teal ${
+                isOpen ? "rotate-180" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
         </div>
-      </button>
+      </div>
 
       {/* Collapsible Content */}
       <div
@@ -112,12 +118,10 @@ function ModuleAccordion({
       >
         <div className="p-4 pt-0 border-t border-teal-500/20">
           {/* Mobile Course Button */}
-          {module.driveUrl && (
+          {(module.driveUrl || module.courses) && (
             <div className="sm:hidden mb-4">
-              <a
-                href={module.driveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleCoursesClick}
                 className="inline-flex items-center w-full justify-center px-4 py-2 bg-gradient-to-r from-teal-500 to-coral-500 text-white rounded-lg hover:opacity-90 transition-opacity text-sm font-semibold"
               >
                 <svg
@@ -133,59 +137,8 @@ function ModuleAccordion({
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                   />
                 </svg>
-                Accéder au cours
-              </a>
-            </div>
-          )}
-
-          {/* Courses Section */}
-          {module.courses && module.courses.length > 0 && (
-            <div className="mb-4">
-              <h4 className="font-semibold text-sm mb-3 flex items-center text-teal">
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5-1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                  />
-                </svg>
-                Cours ({module.courses.length})
-              </h4>
-              <div className="grid grid-cols-1 gap-2">
-                {module.courses.map((course, idx) => (
-                  <a
-                    key={idx}
-                    href={course.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between px-3 py-2 bg-teal-500/10 hover:bg-teal-500/20 rounded-lg transition-colors text-sm group"
-                  >
-                    <span className="font-medium flex-1">{course.title}</span>
-                    {course.year && (
-                      <span className="text-xs opacity-70 ml-2">{course.year}</span>
-                    )}
-                    <svg
-                      className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
-                ))}
-              </div>
+                Accéder aux cours
+              </button>
             </div>
           )}
 
@@ -311,6 +264,7 @@ function ModuleAccordion({
 export default function YearPage({ params }: YearPageProps) {
   const { year } = params;
   const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedModule, setSelectedModule] = useState<ModuleData | null>(null);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -336,6 +290,16 @@ export default function YearPage({ params }: YearPageProps) {
 
   const yearInfo = yearsData[year];
 
+  const handleCoursesClick = (module: ModuleData) => {
+    if (module.courses && module.courses.length > 0) {
+      // Ouvrir le modal si plusieurs cours
+      setSelectedModule(module);
+    } else if (module.driveUrl) {
+      // Ouvrir le lien directement si un seul cours
+      window.open(module.driveUrl, '_blank');
+    }
+  };
+
   return (
     <div ref={containerRef} className="space-y-8">
       <section className="animate-section">
@@ -355,7 +319,11 @@ export default function YearPage({ params }: YearPageProps) {
           <h2 className="text-2xl font-bold mb-6">Modules & Ressources</h2>
           <div className="space-y-4">
             {yearInfo?.modules.map((module) => (
-              <ModuleAccordion key={module.id} module={module} />
+              <ModuleAccordion
+                key={module.id}
+                module={module}
+                onCoursesClick={handleCoursesClick}
+              />
             ))}
           </div>
         </div>
@@ -411,6 +379,16 @@ export default function YearPage({ params }: YearPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Modal des cours - en dehors des sections pour être en premier plan */}
+      {selectedModule && selectedModule.courses && selectedModule.courses.length > 0 && (
+        <CoursesModal
+          isOpen={!!selectedModule}
+          onClose={() => setSelectedModule(null)}
+          moduleName={selectedModule.name}
+          courses={selectedModule.courses}
+        />
+      )}
     </div>
   );
 }
