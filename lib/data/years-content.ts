@@ -17,6 +17,7 @@ export interface Module {
   name: string
   description?: string
   driveUrl?: string
+  courses?: { title: string; url: string; year?: string }[]
   exams?: ExamLink[]
   corrections?: ExamLink[]
 }

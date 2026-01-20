@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
 import { navigationData } from "@/lib/data/navigation";
 
@@ -132,7 +131,6 @@ export function Header() {
 
             {/* Right side */}
             <div className="flex items-center space-x-4">
-              <ThemeToggle />
               <button
                 className="lg:hidden p-3 glass rounded-xl hover:bg-teal-500/20 transition-all duration-300"
                 onClick={() => setIsMobileMenuOpen(true)}

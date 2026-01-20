@@ -7,11 +7,18 @@ export interface ExamLink {
   url: string;
 }
 
+export interface CourseLink {
+  title: string;
+  url: string;
+  year?: string; // Pour 5ème année (2021, 2023, 2024)
+}
+
 export interface Module {
   id: string;
   name: string;
   description: string;
-  driveUrl: string;
+  driveUrl?: string; // Rendu optionnel - utilisé comme fallback
+  courses?: CourseLink[]; // NOUVEAU: Liste des cours individuels
   exams?: ExamLink[];
   corrections?: ExamLink[];
 }
@@ -30,8 +37,30 @@ export const yearsCompleteData: Record<string, YearData> = {
         id: "anatomie-1",
         name: "ANATOMIE 1",
         description: "Cours et ressources pour ANATOMIE 1",
-        driveUrl:
-          "https://drive.google.com/file/d/1x8WbdfchvaIW_Mt3cJ09Izn_OkU-6lb_/view?usp=drive_link",
+        driveUrl: "https://drive.google.com/file/d/1x8WbdfchvaIW_Mt3cJ09Izn_OkU-6lb_/view?usp=drive_link",
+        courses: [
+          { title: "Drive 2021", url: "https://drive.google.com/drive/folders/1fEslEnOuElM6n0AJy_e0xrXf60PyXTED?usp=sharing" },
+          { title: "Membres supérieur et inférieur (2016-2017)", url: "https://drive.google.com/open?id=102JDyU_iNE_cCM0dJMEoFOv1NcsgsW-8" },
+          { title: "Coude, Poignet, Avant bras et Main", url: "https://drive.google.com/open?id=1VRy2uexatliex7LHWzQ_v9AND7FQH6-T" },
+          { title: "Anatomie de la cheville. Pr Najib", url: "https://drive.google.com/open?id=1qDueiKcmxlHBvNOHrOQSqCGFUdidvAsb" },
+          { title: "Anatomie du pied", url: "https://drive.google.com/open?id=1QFY5S93c6MiIjEDOmyQqLWlnMgievMB8" },
+          { title: "Vascularisation des membres", url: "https://drive.google.com/open?id=15EXU9yk9_mZzveLoe50dP-qXMK9MGEVD" },
+          { title: "Anatomie Présentation Thorax Pr Marouf_2018", url: "https://drive.google.com/file/d/1Eznop11Mrd1yeKuiYPYjxsJZNLe01SP0/view?usp=sharing" },
+          { title: "Anatomie du thorax_2020", url: "https://drive.google.com/file/d/1Y-2_Q-SzPZRhy4b2vg5QN31xKc1RTjNE/view?usp=sharing" },
+          { title: "Plèvres_2020", url: "https://drive.google.com/file/d/1QI57xLRZDyieAnH0K3H8kHL19NlKQYNY/view?usp=sharing" },
+          { title: "Poumons_2020", url: "https://drive.google.com/file/d/1G4RZIK_fud1rCZCeArG1M1me85-3UUgL/view?usp=sharing" },
+          { title: "Diaphragme_2020", url: "https://drive.google.com/file/d/1ZCfAU1KCY_zIwdhPlw76flLrt7oPz796/view?usp=sharing" },
+          { title: "Médiastin 1_2020", url: "https://drive.google.com/file/d/1yZ5hEkCb-44wyuNi9pcsNwrVhRkvkEbs/view?usp=sharing" },
+          { title: "Médiastin 2_2020", url: "https://drive.google.com/file/d/1UHpcbIs9rz-wWCT5QH3PJ9y5ruxX4-6L/view?usp=sharing" },
+          { title: "Médiastin postérieur_2020", url: "https://drive.google.com/file/d/1FKtYPP3U885YAtJF7ZCJMki7HbTNiqWB/view?usp=sharing" },
+          { title: "Médiastin postérieur suite_2020", url: "https://drive.google.com/file/d/1QaVNMHR4HgblDdWLIzPZcaWPY87v9LiE/view?usp=sharing" },
+          { title: "Médiastin 5_2018", url: "https://drive.google.com/file/d/1_KQX_xiSLhqe-OR3mwXmc0Zh1MKy57Vv/view?usp=sharing" },
+          { title: "Trachéé_2018", url: "https://drive.google.com/file/d/1tn1R7QBybOPFADkw9XUuJXq-QBlo8DTz/view?usp=sharing" },
+          { title: "Anatomie du coeur_2020", url: "https://drive.google.com/file/d/1-bLR6YUFFGJdsNLp-eaWIBE0JT5P0GiB/view?usp=sharing" },
+          { title: "Anatomie de la glande mammaire_2020", url: "https://drive.google.com/file/d/1lbZZDIzK61SwYcojEHfkA4FxEJv7Mqn9/view?usp=sharing" },
+          { title: "Atlas netter anatomie", url: "https://drive.google.com/open?id=1znneSPSzBy367xeLG6om1dVCPz_HQXW1" },
+          { title: "Grays anatomie pour les étudiants", url: "https://drive.google.com/file/d/1Y9VRjfGKuGOeJbRX_zZxbXIK8QqrTM6C/view?usp=sharing" }
+        ],
         exams: [
           {
             year: "2023",
@@ -1239,6 +1268,23 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour PHYSIOLOGIE 2",
         driveUrl:
           "https://drive.google.com/file/d/1uQ53JsY9R1Ih6NgurKDK2PtISbUm5Ntb/view?usp=drive_link",
+        courses: [
+          { title: "Physiologie de l'axe hypothalamo hypophysaire 2020", url: "https://drive.google.com/open?id=1C2O04Jy7OhReFrCxcy-hE8OWa5QPYE07" },
+          { title: "Physiologie surrénalienne 2020", url: "https://drive.google.com/open?id=1vYcH53UNXN9MbDxmMAsl01Tf_LfcS6Ca" },
+          { title: "Physiologie thyroïdienne 2020", url: "https://drive.google.com/open?id=1cUmwmI9iPxo82akkY99r0Je99c9V1jNq" },
+          { title: "Système endocrinien 2020", url: "https://drive.google.com/open?id=1_lYnN1dXYFlo_qiILy8aC8HYaBN_dHSU" },
+          { title: "Anatomie microscopique rein 2020", url: "https://drive.google.com/open?id=147unqrquyVk9WHSq1Hbtvw3poVLFiqmR" },
+          { title: "Cours 1 Filtration glomérulaire 2020", url: "https://drive.google.com/open?id=1TraW2nRnBY9pE8k5p3LbpgSSoVU_SEIK" },
+          { title: "Cours 2 Fonctions tubulaires", url: "https://drive.google.com/open?id=1PDPSAaJ6khlD13pGVur8XJcQNfwqiHes" },
+          { title: "Cours 3 Eau et sodium_", url: "https://drive.google.com/open?id=1Jni85l8OICGf9krqUIhRQqyrfyYopLsZ" },
+          { title: "Cours 4 Potassium et reins", url: "https://drive.google.com/open?id=1gsI5v-tOxDEDUEQXq2XSEdUNYwSPGQ1j" },
+          { title: "Cours 5 Equilibre acide base", url: "https://drive.google.com/open?id=19fCdrEf-tbcnb_kCoYeAi17YWHgnt_x6" },
+          { title: "Cours 6 Métabolisme phosphocalcique", url: "https://drive.google.com/open?id=1pUCfTmWsvswcoOIeC2O2C8zmqaKa2z8j" },
+          { title: "Physiologie du système nerveux Pr. Maryam FOURTASSI", url: "https://drive.google.com/open?id=1Gkg_QFJNeyIKIRazuVcLVvOYKGvgUPBa" },
+          { title: "Motricité Gastrique 2017", url: "https://drive.google.com/open?id=1W7fKnqdWj_TafIuIAMiK1v3jGUWgBXt0" },
+          { title: "Physio du Pancréas 2017", url: "https://drive.google.com/open?id=1dGBTcprfHHvcEg-69xH7J8Ye1IZawUun" },
+          { title: "Sécrétion et Excrétion biliaire 2017", url: "https://drive.google.com/open?id=1fG68DO22xNLFMKAZHlxZHR8wnRdaWRBR" }
+        ],
         exams: [
           {
             year: "2023",
@@ -1313,6 +1359,29 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour HEMATOLOGIE  FONDAMENTALE",
         driveUrl:
           "https://drive.google.com/file/d/1Csr8a_Uanf1GJYqf9v7jtCISj66feS4C/view?usp=drive_link",
+        courses: [
+          { title: "Cours Intégral d'hématologie Pr Seddik 2020", url: "https://drive.google.com/open?id=1w2aUR9uLoqJyxdJOwiIvmFEGNjchtDty" },
+          { title: "Coagulation 2020", url: "https://drive.google.com/open?id=1N6-fhC6RfOD0e9ALUocw9-WCrR-zKRcj" },
+          { title: "Système RH 2020", url: "https://drive.google.com/open?id=17dDjYUGwIhKKCUpTVhqhEjSfbEgLe5d0" },
+          { title: "Hématopoïèse 2016", url: "https://drive.google.com/open?id=1OrB7AIdowsCaEasvMUe6S8BylBDgZsCr" },
+          { title: "Erythropoièse 2017", url: "https://drive.google.com/open?id=1VbHberknQHbEDDY9huxHmHt9-NU3hFnF" },
+          { title: "Erythropoièse et Fer 2017", url: "https://drive.google.com/open?id=15Q8LSnqSUVFsBKptFqKesqwsTZh4MTs9" },
+          { title: "Hemoglobine 2017", url: "https://drive.google.com/open?id=1NcymOOQyn9B6DD2xxKgfaTEwKPEyVzW-" },
+          { title: "Hémolyse 2017", url: "https://drive.google.com/open?id=10RMQgS2q9v7w-9SpOPTKUPbAJt6W2BUE" },
+          { title: "Vitamines B12 B9 2017", url: "https://drive.google.com/open?id=113LeQw4KAtJ1XpU22BvnWQ69DjdmV2Lb" },
+          { title: "Granulopoïèse 2017", url: "https://drive.google.com/open?id=1qYubljBE4WS5kvIyQjAKRuvaKPXOe1zi" },
+          { title: "Lymphopoièse 2017", url: "https://drive.google.com/open?id=1BL-iXdo-tqa2WluB-TBSnI1d-cC05niP" },
+          { title: "Monocytopoièse 2017", url: "https://drive.google.com/open?id=1QvZqIKwvrFlU_CQ7m9s0zolQAb_NxRu2" },
+          { title: "Megacaryopoièse 2017", url: "https://drive.google.com/open?id=1BVm7l86ndvLy_Sig9Dh-yeaolYSPbDgt" },
+          { title: "Hémogramme 2017", url: "https://drive.google.com/open?id=1eV1xC6g9NmhLyAHpVvdyP1SOLlMHHyrA" },
+          { title: "Système ABO 2017", url: "https://drive.google.com/open?id=1b18sWujGafKH365xoD4HZzM8ttvo27-j" },
+          { title: "Systèmes immunogènes 2016", url: "https://drive.google.com/open?id=1kL6MUlmUUDO3TOXTD1GpVgOTuABeHarI" },
+          { title: "Hémostase 2017", url: "https://drive.google.com/open?id=1fRCksj0gPHL47f3qpwIJGVixS9UnKDdE" },
+          { title: "ITEM 178 TRANSFUSION SANGUINE", url: "https://drive.google.com/open?id=1zTI8a-1bKKPBaYJDhkwT2h5UKhriCnb-" },
+          { title: "ITEM 316 HEMOGRAMME", url: "https://drive.google.com/open?id=1AfLu1pu3-4awN1H_V9rPNb033FI2TOPX" },
+          { title: "ITEM 339 TROUBLES DE L'HEMOSTASE", url: "https://drive.google.com/open?id=1C0-v3YuKHtA_fn62KtlHB9yPgMFae9qW" },
+          { title: "TEM 297 ANEMIE", url: "https://drive.google.com/open?id=14aRhDSGRD7RKmj9N0wg-JjxHV-ryrghq" }
+        ],
         exams: [
           {
             year: "2023",
@@ -1382,6 +1451,42 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour SEMIOLOGIE 2",
         driveUrl:
           "https://drive.google.com/file/d/1_DzHgYL8H6tb2qXVA7e-pNBh5nnGHb6Z/view?usp=drive_link",
+        courses: [
+          { title: "Aménorrhée Pr H. Saadi", url: "https://drive.google.com/open?id=1m3aYATQf3qWmjK7At3mCbPCROJu5ZEDj" },
+          { title: "Leucorrhées Pr H. Saadi", url: "https://drive.google.com/open?id=1WHJfp9gWTRe4_Y0Q6G-_udNko0Zme_DY" },
+          { title: "L'examen gynécologique Pr Mimouni", url: "https://drive.google.com/open?id=18PXnaApsvsnE2naVQa1jJ5Uqvl0OQt_m" },
+          { title: "Les douleurs pelviennes de la femme 1 Pr Mimouni", url: "https://drive.google.com/open?id=1aruNr2tDQAyKXS4saRJ7R7beCR70uyp0" },
+          { title: "Les hémorragies génitales Pr Mimouni", url: "https://drive.google.com/open?id=1CKBN79krRf4hyS_4XsvDB1IElPY50Tzc" },
+          { title: "Sémiologie Thyroïdienne", url: "https://drive.google.com/open?id=15MYYd2k1bR-uHYkSkWSxY9rO_hm1l0B9" },
+          { title: "Sémiologie Gonadique", url: "https://drive.google.com/open?id=1lbKglNvj6BNu6bLxOEM-XZQKMHevwzwa" },
+          { title: "Sémiologie Hypophysaire", url: "https://drive.google.com/open?id=1RXVAqYdjWKsZUatYv8EYJVc6C-Lg278-" },
+          { title: "Sémiologie Surrénalienne", url: "https://drive.google.com/open?id=1DrzINbslSExRbtB3fn7_daOIFiLE13fU" },
+          { title: "Sémiologie hématologique", url: "https://drive.google.com/open?id=1GwKFLSQx3pwTknzI_ENpFEpSFviKV_Ul" },
+          { title: "syndrome hallucinatoire", url: "https://drive.google.com/open?id=1TIrpid1riWWXClTOCHXDplKsbFI1LT27" },
+          { title: "Diagnostic d'une splenomegalie", url: "https://drive.google.com/open?id=19Enstn4Sb_JJGIwckMo6EPFELHDbBqDo" },
+          { title: "Conduite à tenir devant une adénopathie", url: "https://drive.google.com/open?id=1vCxESpFc6AXx25rLAdPT9JwnAKDMysFD" },
+          { title: "CAT+hématurie", url: "https://drive.google.com/open?id=1Hvd9dhfjGU1-YN-_DPWwIUL2juUdf_4J" },
+          { title: "Insuffisance Rénale Aigue", url: "https://drive.google.com/open?id=1HSYIQxOcmDcJbxX3ov2zgqC8do3r0t_E" },
+          { title: "Insuffisance Rénale Chronique", url: "https://drive.google.com/open?id=1c_VlzfSHkp79Rtj_xqucDKDak4C6PK0P" },
+          { title: "Les oedèmes", url: "https://drive.google.com/open?id=1dFjuhH54feIsPXXQkeLNmak5DX0CVoIE" },
+          { title: "Protéinurie", url: "https://drive.google.com/open?id=1tkKIJjTkidnUELqxH1U4WaU5LEYiuqbM" },
+          { title: "Sédiment urinaire", url: "https://drive.google.com/open?id=1w7ubJltYohbwRh6ZI0OTbvoB0grIHcJg" },
+          { title: "Sémio néphrologique", url: "https://drive.google.com/open?id=1a5eVR9GuWecceeq4yVSPgvDPLgOayuVi" },
+          { title: "Syndrome Néphritique", url: "https://drive.google.com/open?id=14oSnZ5fgsGfo_N8df3gnjBU_0Avo9r4w" },
+          { title: "Syndrome néphrotique", url: "https://drive.google.com/open?id=1RH9WCq7IUkrZN1DC_sHQ0hNZ3jlZ7Um7" },
+          { title: "Présentation cours", url: "https://drive.google.com/open?id=1lLQLDG_xAJIuafvCTV7RT7alHbsfh5E_" },
+          { title: "Hypertension Intracranienne", url: "https://drive.google.com/open?id=1VJ8RwYMgboc4Kj2ut9NPoU9LBBSqKPEw" },
+          { title: "Syndrome méningé", url: "https://drive.google.com/open?id=1ZFATdt5MYVmh3t3MoJnvgxttpO9OQ9yg" },
+          { title: "Syndrome Parkinsonien", url: "https://drive.google.com/open?id=1RJZSN77h6LFOV0T4d5I_h37XjBUxeoo_" },
+          { title: "Les Troubles anxieux", url: "https://drive.google.com/open?id=1Kx9cfvT2hYWMsx82DC7811vfOakxf0V6" },
+          { title: "Syndrome delirant", url: "https://drive.google.com/open?id=1I2QoQJlrSBatOq-t58z-oB2aKf-loNKk" },
+          { title: "syndrome hallucinatoire", url: "https://drive.google.com/open?id=1wsx20xBQtkfmdbw9YD3GR9VgqcXRalpS" },
+          { title: "Obsessions", url: "https://drive.google.com/open?id=175q_ZfyGlVutP_KD5qd3rmsyzhnfky8o" },
+          { title: "Syndrome dissociatif", url: "https://drive.google.com/open?id=14sYA6SQulVJCO42z__7kyzXJsUlDIWFT" },
+          { title: "Troubles de langage", url: "https://drive.google.com/open?id=1-lx_PPFNKtPY50n0UFh6cf-pfz50FrWi" },
+          { title: "Les inféctions urogénitales", url: "https://drive.google.com/open?id=1c_nu3cHOUiLccCQwD5umuqyG6y1IGfP-" },
+          { title: "CAT devant un gros rein", url: "https://drive.google.com/open?id=1hzaJiE3xgXjsU_A1cy5f1F3uq_860S1z" }
+        ],
         exams: [
           {
             year: "2023",
@@ -2105,6 +2210,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour ENDOCRINO ET DERMATO",
         driveUrl:
           "https://drive.google.com/drive/folders/12vNZaHTC2Q7El7SXa2Y19-AoPS4xsqty?usp=sharing",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/folders/12vNZaHTC2Q7El7SXa2Y19-AoPS4xsqty?usp=sharing", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/153NXGvB0PZxcyutIgAJB8faxOd3Ej0_c?fbclid=IwAR0rmbD4UaaOFdPL8ToHAKHgFo7tLYQhdiQwm5rw1IeirWowQg7dO6fJ4XM&sort=13&direction=a", year: "2023" }
+        ],
         exams: [
           {
             year: "2023",
@@ -2169,6 +2278,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour ONCO-HEMATOLOGIE",
         driveUrl:
           "https://drive.google.com/drive/folders/1sbz1Smvb7BDbFdbvuYwaz8KY6bZoHrmz?usp=sharing",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/folders/1sbz1Smvb7BDbFdbvuYwaz8KY6bZoHrmz?usp=sharing", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/153NXGvB0PZxcyutIgAJB8faxOd3Ej0_c?fbclid=IwAR0rmbD4UaaOFdPL8ToHAKHgFo7tLYQhdiQwm5rw1IeirWowQg7dO6fJ4XM&sort=13&direction=a", year: "2023" }
+        ],
         exams: [
           {
             year: "2023",
@@ -2213,6 +2326,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour PATHOLOGIE DU SYSTEME NERVEUX",
         driveUrl:
           "https://drive.google.com/drive/folders/1DGQdG_oGXYvqWGN0k0fBErJ6a974MnNm?usp=sharing",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/folders/1DGQdG_oGXYvqWGN0k0fBErJ6a974MnNm?usp=sharing", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/153NXGvB0PZxcyutIgAJB8faxOd3Ej0_c?fbclid=IwAR0rmbD4UaaOFdPL8ToHAKHgFo7tLYQhdiQwm5rw1IeirWowQg7dO6fJ4XM&sort=13&direction=a", year: "2023" }
+        ],
         exams: [
           {
             year: "2023",
@@ -2282,6 +2399,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour APP LOCOMOTEUR",
         driveUrl:
           "https://drive.google.com/drive/mobile/folders/1N4FMy4Skiy8R1VtMR4IKF_6VMkWc0b0s?fbclid=IwAR1UTc0ahKz5WEWSayP8tac5wl0zI9WckBcuFeXzmenzgFVYo0RD_5tSDZI&amp;usp=drive_open&amp;sort=13&amp;direction=a",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/mobile/folders/1N4FMy4Skiy8R1VtMR4IKF_6VMkWc0b0s?fbclid=IwAR1UTc0ahKz5WEWSayP8tac5wl0zI9WckBcuFeXzmenzgFVYo0RD_5tSDZI&usp=drive_open&sort=13&direction=a", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/1HTEivV239ZEzA6N7XAZmpj6Ue60dwXC7?fbclid=IwAR1L6AWlor3gczhJCzuBpTfs-hBnMxCZfB6L6I1GIRaMfyf0YnZZzoftV1M&direction=a", year: "2023" }
+        ],
         exams: [
           {
             year: "2023",
@@ -2371,6 +2492,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour GENETIQUE",
         driveUrl:
           "https://drive.google.com/drive/mobile/folders/1N4FMy4Skiy8R1VtMR4IKF_6VMkWc0b0s?fbclid=IwAR1UTc0ahKz5WEWSayP8tac5wl0zI9WckBcuFeXzmenzgFVYo0RD_5tSDZI&amp;usp=drive_open&amp;sort=13&amp;direction=a",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/mobile/folders/1N4FMy4Skiy8R1VtMR4IKF_6VMkWc0b0s?fbclid=IwAR1UTc0ahKz5WEWSayP8tac5wl0zI9WckBcuFeXzmenzgFVYo0RD_5tSDZI&usp=drive_open&sort=13&direction=a", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/1HTEivV239ZEzA6N7XAZmpj6Ue60dwXC7?fbclid=IwAR1L6AWlor3gczhJCzuBpTfs-hBnMxCZfB6L6I1GIRaMfyf0YnZZzoftV1M&direction=a", year: "2023" }
+        ],
         exams: [
           {
             year: "2023",
@@ -2450,6 +2575,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour PEDIATRIE",
         driveUrl:
           "https://drive.google.com/drive/mobile/folders/1N4FMy4Skiy8R1VtMR4IKF_6VMkWc0b0s?fbclid=IwAR1UTc0ahKz5WEWSayP8tac5wl0zI9WckBcuFeXzmenzgFVYo0RD_5tSDZI&amp;usp=drive_open&amp;sort=13&amp;direction=a",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/mobile/folders/1N4FMy4Skiy8R1VtMR4IKF_6VMkWc0b0s?fbclid=IwAR1UTc0ahKz5WEWSayP8tac5wl0zI9WckBcuFeXzmenzgFVYo0RD_5tSDZI&usp=drive_open&sort=13&direction=a", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/1HTEivV239ZEzA6N7XAZmpj6Ue60dwXC7?fbclid=IwAR1L6AWlor3gczhJCzuBpTfs-hBnMxCZfB6L6I1GIRaMfyf0YnZZzoftV1M&direction=a", year: "2023" }
+        ],
         exams: [
           {
             year: "2023",
@@ -2534,6 +2663,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour ANATOMIE PATHOLOGIE II et III",
         driveUrl:
           "https://drive.google.com/drive/folders/1FNe7t0bbl4OX9PoSSkzanHnVlFj5zM9W?usp=sharing",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/folders/1FNe7t0bbl4OX9PoSSkzanHnVlFj5zM9W?usp=sharing", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/1HTEivV239ZEzA6N7XAZmpj6Ue60dwXC7?fbclid=IwAR1L6AWlor3gczhJCzuBpTfs-hBnMxCZfB6L6I1GIRaMfyf0YnZZzoftV1M&direction=a", year: "2023" }
+        ],
         exams: [
           {
             year: "2023",
@@ -2604,6 +2737,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour Santé Publique II",
         driveUrl:
           "https://drive.google.com/drive/folders/1tiGdZI_8VKx8qwbBuXS-kX-bi2hW3xHt?usp=sharing",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/folders/1tiGdZI_8VKx8qwbBuXS-kX-bi2hW3xHt?usp=sharing", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/1t58ThJD6b6r132jTHiC9FcZwbsu21K2h", year: "2023" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2618,6 +2755,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour Synthèse Thérptq",
         driveUrl:
           "https://drive.google.com/drive/folders/1d5dT6sb5nesN2z0O4GsgWQjjBlWai7-q?usp=sharing",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/folders/1d5dT6sb5nesN2z0O4GsgWQjjBlWai7-q?usp=sharing", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/1qdq70h5oWOGaCjqkCxlCpqQ1RMck6piX", year: "2023" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2632,6 +2773,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour Urg-Réa",
         driveUrl:
           "https://drive.google.com/drive/folders/1Wo1zUmEJFMyZgiz6gQ5DF0b4mU8Sxl36?usp=sharing",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/folders/1Wo1zUmEJFMyZgiz6gQ5DF0b4mU8Sxl36?usp=sharing", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/19sDs2NP1dWAerkIhFSjrg9rdleeyoXsZ", year: "2023" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2646,6 +2791,10 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour Psychiatrie",
         driveUrl:
           "https://drive.google.com/drive/folders/1PjK4Og7YOmKnYO8GV9-XQx-qFnVUjnW0?usp=sharing",
+        courses: [
+          { title: "Cours 2021", url: "https://drive.google.com/drive/folders/1PjK4Og7YOmKnYO8GV9-XQx-qFnVUjnW0?usp=sharing", year: "2021" },
+          { title: "Cours 2023", url: "https://drive.google.com/drive/u/0/folders/1tgL2RXAaO08M55F56pTaddiprl3vBJyh", year: "2023" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2660,6 +2809,9 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour Med Légale - Med Travail",
         driveUrl:
           "https://drive.google.com/drive/folders/1bya6eBRb-t6Z717_y8i07nQFOIvXNyEW?usp=drive_link",
+        courses: [
+          { title: "Cours 2024", url: "https://drive.google.com/drive/folders/1bya6eBRb-t6Z717_y8i07nQFOIvXNyEW?usp=drive_link", year: "2024" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2674,6 +2826,9 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour Gynéco-Obstétriq",
         driveUrl:
           "https://drive.google.com/drive/folders/1YNtGg5-gP6Lqpa8LlLy9r2puvsRndSMo?usp=drive_link",
+        courses: [
+          { title: "Cours 2024", url: "https://drive.google.com/drive/folders/1YNtGg5-gP6Lqpa8LlLy9r2puvsRndSMo?usp=drive_link", year: "2024" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2688,6 +2843,9 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour ORL",
         driveUrl:
           "https://drive.google.com/drive/folders/164VuQNi8SVIDH2rxqNKW4tebQcdKM3pM?usp=drive_link",
+        courses: [
+          { title: "Cours 2024", url: "https://drive.google.com/drive/folders/164VuQNi8SVIDH2rxqNKW4tebQcdKM3pM?usp=drive_link", year: "2024" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2702,6 +2860,9 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour Ophtalmo",
         driveUrl:
           "https://drive.google.com/drive/folders/164VuQNi8SVIDH2rxqNKW4tebQcdKM3pM?usp=drive_link",
+        courses: [
+          { title: "Cours 2024", url: "https://drive.google.com/drive/folders/164VuQNi8SVIDH2rxqNKW4tebQcdKM3pM?usp=drive_link", year: "2024" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2716,6 +2877,9 @@ export const yearsCompleteData: Record<string, YearData> = {
         description: "Cours et ressources pour Uro-Néphro",
         driveUrl:
           "https://drive.google.com/drive/folders/1Ce9CUvItSRRykWpWsVENAirqZVx_WGl0?usp=drive_link",
+        courses: [
+          { title: "Cours 2024", url: "https://drive.google.com/drive/folders/1Ce9CUvItSRRykWpWsVENAirqZVx_WGl0?usp=drive_link", year: "2024" }
+        ],
         exams: [
           {
             year: "N/A",
@@ -2729,7 +2893,56 @@ export const yearsCompleteData: Record<string, YearData> = {
 
   internat: {
     description: "INTERNAT",
-    modules: [],
+    modules: [
+      {
+        id: "internat-anatomie",
+        name: "Anatomie",
+        description: "Cours et ressources pour Anatomie",
+        driveUrl: "https://drive.google.com/drive/folders/1TqSUjJxM9ZuIkidhQScVxgx6Z6a7BhQZ?usp=drive_link"
+      },
+      {
+        id: "internat-biologie",
+        name: "Biologie",
+        description: "Cours et ressources pour Biologie",
+        driveUrl: "https://drive.google.com/drive/folders/1TqSUjJxM9ZuIkidhQScVxgx6Z6a7BhQZ?usp=drive_link"
+      },
+      {
+        id: "internat-pathologies-medicales",
+        name: "Pathologies médicales",
+        description: "Cours et ressources pour Pathologies médicales",
+        driveUrl: "https://drive.google.com/drive/folders/1TqSUjJxM9ZuIkidhQScVxgx6Z6a7BhQZ?usp=drive_link"
+      },
+      {
+        id: "internat-pathologie-chirurgicales",
+        name: "Pathologie chirurgicales",
+        description: "Cours et ressources pour Pathologie chirurgicales",
+        driveUrl: "https://drive.google.com/drive/folders/1TqSUjJxM9ZuIkidhQScVxgx6Z6a7BhQZ?usp=drive_link"
+      },
+      {
+        id: "internat-urgences-medicales",
+        name: "Urgences médicales",
+        description: "Cours et ressources pour Urgences médicales",
+        driveUrl: "https://drive.google.com/drive/folders/1TqSUjJxM9ZuIkidhQScVxgx6Z6a7BhQZ?usp=drive_link"
+      },
+      {
+        id: "internat-urgences-chirurgicales",
+        name: "Urgences chirurgicales",
+        description: "Cours et ressources pour Urgences chirurgicales",
+        driveUrl: "https://drive.google.com/drive/folders/1TqSUjJxM9ZuIkidhQScVxgx6Z6a7BhQZ?usp=drive_link"
+      },
+      {
+        id: "internat-netter-atlas",
+        name: "Netter ATLAS d'anatomie humaine",
+        description: "Ressource anatomique",
+        driveUrl: "https://drive.google.com/open?id=1znneSPSzBy367xeLG6om1dVCPz_HQXW1"
+      },
+      {
+        id: "internat-grays-anatomie",
+        name: "Grays anatomie pour les étudiants",
+        description: "Ressource anatomique",
+        driveUrl: "https://drive.google.com/file/d/1Y9VRjfGKuGOeJbRX_zZxbXIK8QqrTM6C/view?usp=sharing"
+      }
+    ],
   },
 };
 
