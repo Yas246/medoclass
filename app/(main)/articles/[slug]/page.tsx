@@ -49,12 +49,15 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
         <div
           className="prose prose-lg max-w-none
-            prose-headings:text-2xl prose-headings:font-bold
-            prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4
-            prose-p:text-opacity-80 prose-p:leading-relaxed
-            prose-ul:space-y-2 prose-ul:mt-4
-            prose-li:marker:text-blue-600
-            prose-strong:font-semibold"
+            prose-headings:text-2xl prose-headings:font-bold prose-headings:mt-8 prose-headings:mb-4
+            prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-teal prose-h2:font-bold prose-h2:border-b-2 prose-h2:border-teal/50 prose-h2:pb-3
+            prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:font-semibold prose-h3:text-white
+            prose-p:text-opacity-90 prose-p:leading-relaxed prose-p:text-base prose-p:mb-4
+            prose-ul:space-y-3 prose-ul:mt-4 prose-ul:ml-6 prose-ul:mb-6
+            prose-ol:space-y-3 prose-ol:mt-4 prose-ol:ml-6 prose-ol:mb-6
+            prose-li:marker:text-teal prose-li:text-base prose-li:mb-2
+            prose-strong:font-semibold prose-strong:text-white
+            prose-a:text-teal prose-a:no-underline hover:prose-a:underline"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
 

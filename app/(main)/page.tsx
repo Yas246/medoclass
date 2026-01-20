@@ -169,7 +169,7 @@ export default function HomePage() {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-display font-bold text-coral">
-                  4+
+                  7+
                 </div>
                 <div className="text-sm opacity-70 font-body">Articles</div>
               </div>
