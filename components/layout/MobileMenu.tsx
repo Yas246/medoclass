@@ -19,6 +19,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   useEffect(() => {
     if (menuRef.current && overlayRef.current) {
       if (isOpen) {
+        // Scroll to top pour que le menu soit visible
+        window.scrollTo({ top: 0, behavior: 'instant' })
+
         gsap.to(overlayRef.current, {
           opacity: 1,
           duration: 0.3,
