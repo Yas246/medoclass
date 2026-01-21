@@ -86,31 +86,6 @@ export default function MedoclassPage() {
           </div>
         ))}
       </div>
-
-      <div className="glass rounded-2xl p-6 text-center">
-        <h3 className="text-xl font-bold mb-3">Accès aux Ressources</h3>
-        <p className="opacity-80 mb-4">
-          Tous les cours sont disponibles sur Google Drive. Cliquez sur une
-          année pour accéder aux modules et ressources correspondants.
-        </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <a
-            href="/medoclass-oujda"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center glass px-6 py-3 rounded-lg hover:scale-105 transition-transform duration-300"
-          >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.773 6.62l3.76 6.574h3.76c3.384 0 3.76-.01 3.76-.087 0-.09-7.425-13.082-7.565-13.226-.05-.05-1.838-.09-3.745-.09zm-4.605 1.91L1.747 14.645l-.03.09H3.68c1.093 0 1.953-.02 1.953-.047 0-.068 5.318-9.437 5.376-9.499.03-.03-1.065 1.728-2.656 4.18zm.562 8.222l-2.42 4.282c-1.333 2.355-2.42 4.294-2.42 4.31 0 .02 2.4.03 5.333.03h5.333l2.42-4.282c1.333-2.355 2.42-4.294 2.42-4.31 0-.02-2.4-.03-5.333-.03H7.967z" />
-            </svg>
-            Google Drive
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

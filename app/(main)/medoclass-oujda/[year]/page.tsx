@@ -291,12 +291,15 @@ export default function YearPage({ params }: YearPageProps) {
   const yearInfo = yearsData[year];
 
   const handleCoursesClick = (module: ModuleData) => {
+    // Toujours ouvrir le modal pour faciliter l'ajout futur de liens Drive
     if (module.courses && module.courses.length > 0) {
-      // Ouvrir le modal si plusieurs cours
       setSelectedModule(module);
     } else if (module.driveUrl) {
-      // Ouvrir le lien directement si un seul cours
-      window.open(module.driveUrl, '_blank');
+      // Convertir le driveUrl en cours pour l'afficher dans la modal
+      setSelectedModule({
+        ...module,
+        courses: [{ title: 'Drive', url: module.driveUrl }]
+      });
     }
   };
 
