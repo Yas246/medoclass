@@ -17,6 +17,7 @@ export interface Module {
   id: string;
   name: string;
   description: string;
+  semester?: number;
   driveUrl?: string; // Rendu optionnel - utilisé comme fallback
   courses?: CourseLink[]; // NOUVEAU: Liste des cours individuels
   exams?: ExamLink[];
@@ -35,6 +36,7 @@ export const yearsCompleteData: Record<string, YearData> = {
     modules: [
       {
         id: "anatomie-1",
+        semester: 1,
         name: "ANATOMIE 1",
         description: "Cours et ressources pour ANATOMIE 1",
         driveUrl:
@@ -252,6 +254,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "chimie et biochimie",
+        semester: 1,
         name: "CHIMIE  et BIOCHIMIE",
         description: "Cours et ressources pour CHIMIE ET BIOCHIMIE",
         driveUrl:
@@ -403,6 +406,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "biologie",
+        semester: 1,
         name: "BIOLOGIE",
         description: "Cours et ressources pour BIOLOGIE",
         driveUrl:
@@ -479,6 +483,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "sante-public-1",
+        semester: 1,
         name: "SANTE PUBLIC 1",
         description: "Cours et ressources pour SANTE PUBLIC 1",
         driveUrl:
@@ -528,6 +533,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "meth-d-app---amp--termino",
+        semester: 1,
         name: "METHODOLOGIE D'APPRENTISSAGE  ET TERMINOLOGIE",
         description:
           "Cours et ressources pour METHODOLOGIE D'APPRENTISSAGE  ET TERMINOLOGIE",
@@ -590,6 +596,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "langue--amp--com",
+        semester: 1,
         name: "COMMUNICATION ET LANGUE",
         description: "Cours et ressources pour COMMUNICATION ET LANGUE",
         driveUrl:
@@ -636,6 +643,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "biophysique",
+        semester: 2,
         name: "BIOPHYSIQUE",
         description: "Cours et ressources pour BIOPHYSIQUE",
         courses: [
@@ -771,6 +779,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "histoire-de--la-medecine--amp---psychologie",
+        semester: 2,
         name: "HISTOIRE DE  LA MEDECINE ET PSYCHOLOGIE",
         description:
           "Cours et ressources pour HISTOIRE DE  LA MEDECINE ET PSYCHOLOGIE",
@@ -874,6 +883,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "anatomie-2",
+        semester: 2,
         name: "ANATOMIE 2",
         description: "Cours et ressources pour ANATOMIE 2",
         driveUrl:
@@ -966,6 +976,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "histologie-generale",
+        semester: 2,
         name: "HISTOLOGIE GÉNÉRALE",
         description: "Cours et ressources pour HISTOLOGIE GÉNÉRALE",
         driveUrl:
@@ -1058,6 +1069,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "tec",
+        semester: 2,
         name: "TEC",
         description: "Cours et ressources pour TEC",
         driveUrl: undefined,
@@ -1109,6 +1121,7 @@ export const yearsCompleteData: Record<string, YearData> = {
     modules: [
       {
         id: "anatomie-3",
+        semester: 3,
         name: "ANATOMIE 3",
         description: "Cours et ressources pour ANATOMIE 3",
         courses: [
@@ -1216,6 +1229,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "semiologie-1",
+        semester: 3,
         name: "SEMIOLOGIE 1",
         description: "Cours et ressources pour SEMIOLOGIE 1",
         driveUrl:
@@ -1337,6 +1351,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "physiologie-1",
+        semester: 3,
         name: "PHYSIOLOGIE 1",
         description: "Cours et ressources pour PHYSIOLOGIE 1",
         driveUrl:
@@ -1418,6 +1433,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "histo-embryo-speciale",
+        semester: 3,
         name: "HISTO-EMBRYO SPECIALE",
         description: "Cours et ressources pour HISTO-EMBRYO SPECIALE",
         courses: [
@@ -1510,6 +1526,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "med-exp",
+        semester: 3,
         name: "MED-Exp",
         description: "Cours et ressources pour MED-Exp",
         driveUrl:
@@ -1566,6 +1583,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "micro-immuno",
+        semester: 3,
         name: "MICRO-IMMUNO",
         description: "Cours et ressources pour MICRO-IMMUNO",
         driveUrl:
@@ -1652,6 +1670,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "anatomie-4",
+        semester: 4,
         name: "ANATOMIE 4",
         description: "Cours et ressources pour ANATOMIE 4",
         courses: [
@@ -1747,6 +1766,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "biochimie-clinique",
+        semester: 4,
         name: "BIOCHIMIE CLINIQUE",
         description: "Cours et ressources pour BIOCHIMIE CLINIQUE",
         courses: [
@@ -1829,6 +1849,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "physiologie-2",
+        semester: 4,
         name: "PHYSIOLOGIE 2",
         description: "Cours et ressources pour PHYSIOLOGIE 2",
         driveUrl:
@@ -1965,6 +1986,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "hematologie--fondamentale",
+        semester: 4,
         name: "HEMATOLOGIE  FONDAMENTALE",
         description: "Cours et ressources pour HEMATOLOGIE  FONDAMENTALE",
         driveUrl:
@@ -2120,6 +2142,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "semiologie-2",
+        semester: 4,
         name: "SEMIOLOGIE 2",
         description: "Cours et ressources pour SEMIOLOGIE 2",
         driveUrl:
@@ -2335,6 +2358,7 @@ export const yearsCompleteData: Record<string, YearData> = {
     modules: [
       {
         id: "parasitologie",
+        semester: 5,
         name: "PARASITOLOGIE",
         description: "Cours et ressources pour PARASITOLOGIE",
         driveUrl:
@@ -2421,6 +2445,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "pathologies-infectieuses",
+        semester: 5,
         name: "PATHOLOGIES INFECTIEUSES",
         description: "Cours et ressources pour PATHOLOGIES INFECTIEUSES",
         driveUrl:
@@ -2502,6 +2527,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "pharmacologie",
+        semester: 5,
         name: "PHARMACOLOGIE",
         description: "Cours et ressources pour PHARMACOLOGIE",
         driveUrl:
@@ -2603,6 +2629,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "radiologie",
+        semester: 5,
         name: "RADIOLOGIE",
         description: "Cours et ressources pour RADIOLOGIE",
         driveUrl:
@@ -2679,6 +2706,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "apg",
+        semester: 5,
         name: "APG",
         description: "Cours et ressources pour APG",
         driveUrl:
@@ -2730,6 +2758,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "pathologies-respiratoires",
+        semester: 6,
         name: "PATHOLOGIES RESPIRATOIRES",
         description: "Cours et ressources pour PATHOLOGIES RESPIRATOIRES",
         driveUrl:
@@ -2814,6 +2843,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "pathologies-digestives",
+        semester: 6,
         name: "PATHOLOGIES DIGESTIVES",
         description: "Cours et ressources pour PATHOLOGIES DIGESTIVES",
         driveUrl:
@@ -2893,6 +2923,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "pathologies-cardio-vasculaires",
+        semester: 6,
         name: "PATHOLOGIES CARDIO-VASCULAIRES",
         description: "Cours et ressources pour PATHOLOGIES CARDIO-VASCULAIRES",
         driveUrl:
@@ -2978,6 +3009,7 @@ export const yearsCompleteData: Record<string, YearData> = {
     modules: [
       {
         id: "endocrino--amp--dermato",
+        semester: 7,
         name: "ENDOCRINO ET DERMATO",
         description: "Cours et ressources pour ENDOCRINO ET DERMATO",
         driveUrl:
@@ -3054,6 +3086,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "dermato-2014-2018",
+        semester: 7,
         name: "DERMATO 2014-2018",
         description: "Cours et ressources pour DERMATO 2014-2018",
         courses: [
@@ -3083,6 +3116,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "onco-hematologie",
+        semester: 7,
         name: "ONCO-HEMATOLOGIE",
         description: "Cours et ressources pour ONCO-HEMATOLOGIE",
         driveUrl:
@@ -3139,6 +3173,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "pathologie-du-systeme-nerveux",
+        semester: 7,
         name: "PATHOLOGIE DU SYSTEME NERVEUX",
         description: "Cours et ressources pour PATHOLOGIE DU SYSTEME NERVEUX",
         driveUrl:
@@ -3220,6 +3255,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "app-locomoteur",
+        semester: 8,
         name: "APP LOCOMOTEUR",
         description: "Cours et ressources pour APP LOCOMOTEUR",
         driveUrl:
@@ -3321,6 +3357,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "genetique",
+        semester: 8,
         name: "GENETIQUE",
         description: "Cours et ressources pour GENETIQUE",
         driveUrl:
@@ -3412,6 +3449,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "pediatrie",
+        semester: 8,
         name: "PEDIATRIE",
         description: "Cours et ressources pour PEDIATRIE",
         driveUrl:
@@ -3508,6 +3546,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "anatomie-pathologie-ii-et-iii",
+        semester: 8,
         name: "ANATOMIE PATHOLOGIE II et III",
         description: "Cours et ressources pour ANATOMIE PATHOLOGIE II et III",
         driveUrl:
@@ -3586,6 +3625,7 @@ export const yearsCompleteData: Record<string, YearData> = {
     modules: [
       {
         id: "sant--publique-ii",
+        semester: 9,
         name: "Santé Publique II",
         description: "Cours et ressources pour Santé Publique II",
         driveUrl:
@@ -3616,6 +3656,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "synth-se-th-rptq",
+        semester: 9,
         name: "Synthèse Thérptq",
         description: "Cours et ressources pour Synthèse Thérptq",
         driveUrl:
@@ -3646,6 +3687,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "urg-r-a",
+        semester: 9,
         name: "Urg-Réa",
         description: "Cours et ressources pour Urg-Réa",
         driveUrl:
@@ -3676,6 +3718,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "psychiatrie",
+        semester: 9,
         name: "Psychiatrie",
         description: "Cours et ressources pour Psychiatrie",
         driveUrl:
@@ -3706,6 +3749,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "med-l-gale---med-travail",
+        semester: 10,
         name: "Med Légale - Med Travail",
         description: "Cours et ressources pour Med Légale - Med Travail",
         driveUrl:
@@ -3727,6 +3771,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "gyn-co-obst-triq",
+        semester: 10,
         name: "Gynéco-Obstétriq",
         description: "Cours et ressources pour Gynéco-Obstétriq",
         driveUrl:
@@ -3748,6 +3793,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "orl",
+        semester: 10,
         name: "ORL",
         description: "Cours et ressources pour ORL",
         driveUrl:
@@ -3769,6 +3815,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "ophtalmo",
+        semester: 10,
         name: "Ophtalmo",
         description: "Cours et ressources pour Ophtalmo",
         driveUrl:
@@ -3790,6 +3837,7 @@ export const yearsCompleteData: Record<string, YearData> = {
       },
       {
         id: "uro-n-phro",
+        semester: 10,
         name: "Uro-Néphro",
         description: "Cours et ressources pour Uro-Néphro",
         driveUrl:

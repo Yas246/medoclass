@@ -22,10 +22,16 @@ const yearTitles: Record<string, string> = {
   internat: "Internat",
 };
 
+const getSemesterName = (semester: number): string => {
+  if (semester === 1) return "1er Semestre";
+  return `${semester}ème Semestre`;
+};
+
 interface ModuleData {
   id: string;
   name: string;
   description?: string;
+  semester?: number;
   driveUrl?: string;
   courses?: Array<{ title: string; url: string; year?: string }>;
   exams?: Array<{ year: string; title: string; url: string }>;
@@ -303,6 +309,21 @@ export default function YearPage({ params }: YearPageProps) {
     }
   };
 
+  // Group modules by semester
+  const modulesBySemester = yearInfo?.modules.reduce((acc, module) => {
+    if (module.semester !== undefined) {
+      if (!acc[module.semester]) {
+        acc[module.semester] = [];
+      }
+      acc[module.semester].push(module);
+    }
+    return acc;
+  }, {} as Record<number, typeof yearInfo.modules>);
+
+  // Sort semesters and separate modules without semester (for internat)
+  const sortedSemesters = modulesBySemester ? Object.keys(modulesBySemester).map(Number).sort((a, b) => a - b) : [];
+  const modulesWithoutSemester = yearInfo?.modules.filter(m => m.semester === undefined) || [];
+
   return (
     <div ref={containerRef} className="space-y-8">
       <section className="animate-section">
@@ -320,15 +341,41 @@ export default function YearPage({ params }: YearPageProps) {
       <section className="animate-section">
         <div className="glass rounded-2xl p-6">
           <h2 className="text-2xl font-bold mb-6">Modules & Ressources</h2>
-          <div className="space-y-4">
-            {yearInfo?.modules.map((module) => (
-              <ModuleAccordion
-                key={module.id}
-                module={module}
-                onCoursesClick={handleCoursesClick}
-              />
-            ))}
-          </div>
+
+          {/* Display modules grouped by semester */}
+          {sortedSemesters.map((semester, index) => (
+            <div key={semester} className={index > 0 ? "mt-12" : ""}>
+              <h3 className="text-xl font-bold mb-4 text-teal flex items-center">
+                <span className="bg-teal-500/20 px-4 py-2 rounded-lg">
+                  {getSemesterName(semester)}
+                </span>
+              </h3>
+              <div className="space-y-4">
+                {modulesBySemester?.[semester].map((module) => (
+                  <ModuleAccordion
+                    key={module.id}
+                    module={module}
+                    onCoursesClick={handleCoursesClick}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+
+          {/* Display modules without semester (for internat) */}
+          {modulesWithoutSemester.length > 0 && (
+            <div className={sortedSemesters.length > 0 ? "mt-12" : ""}>
+              <div className="space-y-4">
+                {modulesWithoutSemester.map((module) => (
+                  <ModuleAccordion
+                    key={module.id}
+                    module={module}
+                    onCoursesClick={handleCoursesClick}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
