@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description: 'Ressources éducatives pour les étudiants en médecine au Maroc',
   keywords: ['médecine', 'étudiants', 'maroc', 'cours', 'medical', 'wicen'],
   authors: [{ name: 'WICEN' }],
+  icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
     title: 'WICEN',
     description: 'Plateforme éducative médicale',

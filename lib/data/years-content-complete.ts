@@ -3104,13 +3104,33 @@ export const yearsCompleteData: Record<string, YearData> = {
         exams: [
           {
             year: "2018",
-            title: " SN 2018 ",
-            url: "https://drive.google.com/file/d/1_uab85a5DBLukNfufN4h-D1SlZhsx3Tq/view?usp=sharing",
+            title: "SN",
+            url: "https://drive.google.com/file/d/1_F9LiwbQYo5LJFWk5efEQVbdOkygs0Tc/view?usp=sharing",
           },
           {
             year: "2017",
-            title: " SN 2017 ",
-            url: "https://drive.google.com/file/d/1mIa5sfHXuN_iw73JM4IWC8b4NFO6CZma/view?usp=sharing",
+            title: "SN",
+            url: "https://drive.google.com/file/d/1So5xZYPyANs2PUJOpda5-RGdNW_FjX1_/view?usp=sharing",
+          },
+          {
+            year: "2017",
+            title: "Sr",
+            url: "https://drive.google.com/file/d/1WfcIyN7c_56OwdzghBUwU8Xep-KGe-Dz/view?usp=sharing",
+          },
+          {
+            year: "2015",
+            title: "SN",
+            url: "https://drive.google.com/file/d/1Mgv8nx-wG246mos9H2zJMAb0NKbnZoL0/view?usp=sharing",
+          },
+          {
+            year: "2014",
+            title: "SN",
+            url: "https://drive.google.com/file/d/1aRBzt9lcRHtTfC33ZUqllC1sagY3jOwh/view?usp=sharing",
+          },
+          {
+            year: "2014",
+            title: "Sr",
+            url: "https://drive.google.com/file/d/1SXIUtVsZj5QWMfaZ5YlnnpIiM66imK3_/view?usp=sharing",
           },
         ],
       },
