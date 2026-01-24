@@ -43,7 +43,7 @@ export const articles: Article[] = [
     date: "2024-01-01",
     category: "Éthique",
     readTime: "6 min",
-    image: "/article-hippocrate.jpg",
+    image: "/hippo.jpg",
   },
   {
     id: 2,

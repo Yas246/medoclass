@@ -35,25 +35,25 @@ export default function MedoclassPage() {
     {
       year: 2,
       title: "2ème Année",
-      description: "Physiologie et pathologie",
+      description: "Physiologie et Sémiologie",
       href: "/medoclass-oujda/2eme-annee",
     },
     {
       year: 3,
       title: "3ème Année",
-      description: "Sémiologie et clinique",
+      description: "Pharmaco, Imagerie et Pathologies",
       href: "/medoclass-oujda/3eme-annee",
     },
     {
       year: 4,
       title: "4ème Année",
-      description: "Médecine interne et chirurgie",
+      description: "Pathologies Spécialisées",
       href: "/medoclass-oujda/4eme-annee",
     },
     {
       year: 5,
       title: "5ème Année",
-      description: "Spécialités médicales",
+      description: "Pathologies avancées et conduite pratique",
       href: "/medoclass-oujda/5eme-annee",
     },
     {

@@ -1156,73 +1156,8 @@ export const yearsCompleteData: Record<string, YearData> = {
         ],
         exams: [
           {
-            year: "2023",
-            title: "2023 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2022",
-            title: "2022 (1)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2021",
-            title: "2021 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2020",
-            title: "2020 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2019",
-            title: "2019 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2018",
-            title: "2018 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2017",
-            title: "2017 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2016",
-            title: "2016",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2015",
-            title: "2015 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2014",
-            title: "2014 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2013",
-            title: "2013",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2012",
-            title: "2012 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2011",
-            title: "2011 (2)",
-            url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
-          },
-          {
-            year: "2023",
-            title: "2023 (2)",
+            year: "Drive",
+            title: "2010 - 2023",
             url: "https://drive.google.com/file/d/1Cp_P_i5uovRXWlLcctCncgR9SHX8r_w9/view?usp=drive_link",
           },
         ],
@@ -1693,73 +1628,8 @@ export const yearsCompleteData: Record<string, YearData> = {
         ],
         exams: [
           {
-            year: "2023",
-            title: "SN 2023",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2023",
-            title: "Sr 2023",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2021",
-            title: "SN 2021",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2021",
-            title: "Sr 2021",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2020",
-            title: "SN 2020",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2020",
-            title: "Sr 2020",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2019",
-            title: "SN 2019",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2019",
-            title: "Sr 2019",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2019",
-            title: "Excep 2019",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2017",
-            title: "SN 2017",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2016",
-            title: "Sr 2016",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2015",
-            title: "SN 2015",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2015",
-            title: "Sr 2015",
-            url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
-          },
-          {
-            year: "2012",
-            title: "Sr 2012",
+            year: "Drive",
+            title: "2015 - 2023",
             url: "https://drive.google.com/file/d/1x9n5rl8EQuHB7iDXu2_-YvHGdwKNDgUg/view?usp=drive_link",
           },
         ],
@@ -1973,7 +1843,7 @@ export const yearsCompleteData: Record<string, YearData> = {
             url: "https://drive.google.com/file/d/1ijFKWPr3jWaAPWOdXn6CNn3lXo6MeDlU/view?usp=sharing",
           },
           {
-            year: "2017",
+            year: "2018",
             title: " SN 2018 ",
             url: "https://drive.google.com/file/d/18Dj92sYZSe9DcLk6G4RLQ95P3eT5mN02/view?usp=sharing",
           },
